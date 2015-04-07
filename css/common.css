@@ -1,0 +1,31 @@
+.hide {
+	display: none;
+}
+.pointer:hover {
+	cursor: pointer;;
+}
+.centered-x {
+	margin: 0 auto;
+	display: table;
+}
+.margin-left15 {
+	margin-left: 15px;
+}
+
+/*
+ * Animations
+ *  */
+@-webkit-keyframes rotatingY {
+from {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	-0-transform: rotateY(0deg);
+}
+to {
+	-webkit-transform: rotateY(360deg);
+	-moz-transform: rotateY(360deg);
+	-ms-transform: rotateY(360deg);
+	-0-transform: rotateY(360deg);
+}
+}

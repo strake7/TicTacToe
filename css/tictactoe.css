@@ -1,0 +1,18 @@
+/* Grid */
+.grid {
+	display: table;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.grid .grid-row {
+	display: table-row;
+}
+.grid .grid-row .grid-cell {
+	display: table-cell;
+	height: 50px;
+	width: 50px;
+	border: 1px solid black;
+	font-size:43px;
+	text-align:center;
+}
+
