@@ -42,6 +42,10 @@ TttViewModel.prototype = {
 	restartGame:function(){
 		this.startGame(this.players()[0].name(), this.players()[1].name(), this.grid.size());		
 	},
+	newGame: function(){
+		this.welcomeVm.screen(0);
+		this.welcomeVm.visible(true);		
+	},
 	checkWinningMove: function(lastCell){
 	    var base = this,
 	        isWinner = this.isWinningMove(lastCell);
@@ -130,17 +134,17 @@ function Grid(tttVm, size){
 }
 Grid.prototype ={
 	init: function(){
- 	window.onmousemove = function(event) {
- 		console.log(event);
- 	    var width = screen.width;
- 	    var mouseX = event.pageX - (width * 0.5);
- 	    var height = screen.height;
- 	    var mouseY = event.pageY - (height * 0.5);
- 	    var xAngle = (mouseY / height) * 50;
- 	    var yAngle = (mouseX / width) * 50;
-
- 	    document.getElementById("grid").style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
- 	};
+// 	window.onmousemove = function(event) {
+// 		console.log(event);
+// 	    var width = screen.width;
+// 	    var mouseX = event.pageX - (width * 0.5);
+// 	    var height = screen.height;
+// 	    var mouseY = event.pageY - (height * 0.5);
+// 	    var xAngle = (mouseY / height) * 50;
+// 	    var yAngle = (mouseX / width) * 50;
+//
+// 	    document.getElementById("grid").style.webkitTransform = "rotateX("+xAngle+"deg) rotateY("+yAngle+"deg)";
+// 	};
     },
 	allCells: function(){
 		return this.gridArr().reduce(function(a, b){return a.concat(b);});
@@ -208,11 +212,11 @@ function ResultsViewModel(tttVm){
 	this.visible = ko.observable();	
 	this.message = ko.observable();
 	this.playAgain = function(){
-		this.visible(false);
+		self.visible(false);
 		self.tttVm.restartGame();
 	};
 	this.newGame = function(){
-		this.visible(false);
-		self.tttVm.init();
+		self.visible(false);
+		self.tttVm.newGame();
 	};
 }
