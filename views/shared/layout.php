@@ -17,6 +17,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-debug.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout-validation/2.0.2/knockout.validation.js"></script>
 <script type="text/javascript" src="/js/knockout.extensions.js"></script>
+<script type="text/javascript" src="/js/tictactoe.js"></script>
 </head>
 <body>
     <?php echo $_content; ?> 
