@@ -52,7 +52,6 @@
     <button data-bind="click: playAgain" title="Play again using the same board and player settings">Play Again</button>
     <button data-bind="click: newGame" title="Create a brand new game">New Game</button>
 </div>
-<script type="text/javascript" src="/js/tictactoe.js"></script>
 <script type="text/javascript">
     var vm = new TttViewModel();
     vm.init();
